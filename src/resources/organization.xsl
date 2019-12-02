@@ -4,6 +4,11 @@
     <!-- Attribute used for table border -->
     <xsl:attribute-set name="tableBorder">
           <xsl:attribute name="border">solid 0.1mm black</xsl:attribute>
+          <xsl:attribute name="text-align">center</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="tableCell">
+          <xsl:attribute name="border">dashed 0.1mm black</xsl:attribute>
+          <xsl:attribute name="text-align">left</xsl:attribute>
     </xsl:attribute-set>
     <xsl:template match="organization">
         <fo:root>
@@ -45,18 +50,18 @@
     </xsl:template>
     <xsl:template match="branch">
     <fo:table-row>   
-      <fo:table-cell xsl:use-attribute-sets="tableBorder">
+      <fo:table-cell xsl:use-attribute-sets="tableCell">
         <fo:block>
           <xsl:value-of select="name"/>
         </fo:block>
       </fo:table-cell>
      
-      <fo:table-cell xsl:use-attribute-sets="tableBorder">
+      <fo:table-cell xsl:use-attribute-sets="tableCell">
         <fo:block>
           <xsl:value-of select="city"/>
         </fo:block>
       </fo:table-cell>   
-      <fo:table-cell xsl:use-attribute-sets="tableBorder">
+      <fo:table-cell xsl:use-attribute-sets="tableCell">
       <fo:block>
           <xsl:value-of select="startdate"/>
       </fo:block>
